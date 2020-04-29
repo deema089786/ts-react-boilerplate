@@ -1,0 +1,15 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "../dist-server",
+    "rootDir": ".",
+    "target": "es6"
+  },
+  "exclude": ["node_modules", "scripts"],
+  "include": ["index.ts", "config.ts"]
+}
