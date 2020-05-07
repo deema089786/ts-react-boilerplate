@@ -32,20 +32,6 @@ const syncUserContext = (data: { user: API.UserProfile; isAuth: boolean }) => {
   }
 };
 
-const initialState: Auth = {
-  isAuth: initIsAuth,
-  user: initUserData,
-  logout: () => {
-    throw new Error('Not implemented!');
-  },
-  signIn: () => {
-    throw new Error('Not implemented!');
-  },
-  signUp: () => {
-    throw new Error('Not implemented!');
-  },
-};
-
 export interface Auth {
   isAuth: boolean;
   user: API.UserProfile;
@@ -56,9 +42,23 @@ export interface Auth {
     password: string;
     firstName: string;
     lastName: string;
-    organization: string;
   }) => Promise<void>;
 }
+
+const initialState: Auth = {
+  isAuth: initIsAuth,
+  user: initUserData,
+  logout: () => {
+    throw new Error('Not implemented!');
+  },
+  signIn: async () => {
+    throw new Error('Not implemented!');
+  },
+  signUp: async () => {
+    throw new Error('Not implemented!');
+  },
+};
+
 
 export const AuthContext = React.createContext(initialState);
 export const useAuth = () => useContext(AuthContext);

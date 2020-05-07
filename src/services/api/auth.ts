@@ -10,7 +10,6 @@ const register = (data: {
   password: string;
   firstName: string;
   lastName: string;
-  organization: string;
 }) => fetch<{ token: string }>('/auth/register', { data, method: 'POST' });
 
 export default { profile, login, register };

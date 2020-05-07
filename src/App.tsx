@@ -17,6 +17,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <Switch>
             <Route path="/" exact>
+              <MainPageContainer />
+            </Route>
+            <Route path="/protected" exact>
               <EnsureAuth>
                 <MainPageContainer />
               </EnsureAuth>

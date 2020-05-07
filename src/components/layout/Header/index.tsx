@@ -1,41 +1,20 @@
 import React from 'react';
-import classNames from 'classnames';
 import {
-  AppBar, Toolbar, IconButton, Typography, useTheme, useMediaQuery,
+  AppBar, Toolbar, Typography,
 } from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons';
 import useStyles from './styles';
 
-interface Props {
-  open: boolean;
-  setOpen: (ope: boolean) => void;
-}
-const Header: React.FC<Props> = (props: Props) => {
-  const { open, setOpen } = props;
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('xs'));
-  const classes = useStyles();
+
+const Header: React.FC = () => {
+  const classes = useStyles({});
   return (
     <AppBar
       position="fixed"
-      className={classNames(classes.appBar, {
-        [classes.appBarShift]: matches ? false : open,
-      })}
+      className={classes.appBar}
     >
       <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={() => setOpen(true)}
-          edge="start"
-          className={classNames(classes.menuButton, {
-            [classes.hide]: open,
-          })}
-        >
-          <MenuIcon />
-        </IconButton>
         <Typography variant="h6" noWrap>
-          carcab
+          React Boilerplate
         </Typography>
       </Toolbar>
     </AppBar>
